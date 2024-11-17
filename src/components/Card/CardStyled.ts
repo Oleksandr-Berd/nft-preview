@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import viewPic from "../../assets/images/icon-view.svg"
+
 export const CardCon = styled.div`
   padding-left: 24px;
   padding-top: 24px;
@@ -19,9 +21,48 @@ export const HeroImgCon = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
+  @media (min-width: 1280px) {
+    position: relative;
+    &::before {
+      display: none;
+      content: " ";
+      width: 100%;
+      height: 432px;
+
+      background-image: url(${viewPic});
+      background-repeat: no-repeat;
+      background-color: #00fff8;
+
+      background-position: center center;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+        position: absolute;
+        /* top: 0; */
+
+        display: block;
+        content: " ";
+        width: 100%;
+        height: 432px;
+
+        background-color: #00fff8;
+        opacity: 0.7;
+
+        cursor: pointer;
+      }
+    }
+  }
+
   & > img {
     width: 278px;
     height: 278px;
+
+    @media (min-width: 1280px) {
+      width: 100%;
+      height: 432px;
+    }
   }
 `;
 
@@ -32,6 +73,18 @@ export const CardTitle = styled.h3`
   font-weight: 700;
 
   color: #fff;
+
+  @media (min-width: 1280px) {
+    transition: color 1s linear;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #00fff8;
+      cursor: pointer;
+      transition: color 1s linear;
+    }
+  }
 `;
 
 export const CardContent = styled.p`
@@ -95,7 +148,16 @@ export const AuthorCon = styled.div`
     margin-right: 16px;
   }
 
-  & span{
+  & span {
     color: #fff;
+    transition: color 1s linear;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #00fff8;
+      transition: color 1s linear;
+      cursor: pointer;
+    }
   }
 `;
