@@ -13,24 +13,24 @@ const Card:React.FC = () => {
         </SC.HeroImgCon>
         <div>
           <SC.CardTitle>Equilibrium #3429</SC.CardTitle>
-          <p>Our Equilibrium collection promotes balance and calm.</p>
-          <div>
+          <SC.CardContent>Our Equilibrium collection promotes balance and calm.</SC.CardContent>
+          <SC.InfoCon>
             <div>
               <img src={ethereum} alt="ethereum" />
-              <p>0.041 ETH</p>
+              <SC.Ethereum>0.041 ETH</SC.Ethereum>
             </div>
             <div>
               <img src={clock} alt="clock" />
-              <p>3 days left</p>
+              <SC.TimeTerm>3 days left</SC.TimeTerm>
             </div>
-          </div>
+          </SC.InfoCon>
         </div>
-        <div>
+        <SC.AuthorCon>
           <img src={avatar} alt="avatar" />
           <p>
-            Creation of<span>Jules Wyvern</span>
+            Creation of <span>Jules Wyvern</span>
           </p>
-        </div>
+        </SC.AuthorCon>
       </SC.CardCon>
     );
 }
